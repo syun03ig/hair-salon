@@ -1,0 +1,920 @@
+@charset "UTF-8";
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #000000; 
+}
+
+.header-logo a {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.header-nav a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+.header-nav a:hover {
+  color: #777777; 
+}
+
+.btn-reserve {
+  display: inline-block;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border: 2px solid #000000;
+  transition: all 0.3s;
+}
+
+.btn-reserve:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.main-visual {
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  position: relative;
+}
+
+.mv-container {
+  width: 100%;
+  height: 100%;
+}
+
+.mv-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.mv-text-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #000000;
+}
+
+.mv-title {
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.mv-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  padding-left: 5px;
+}
+
+.concept {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.concept-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.concept-text {
+  flex: 1;
+}
+
+.concept-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.concept-lead {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.concept-description {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.8;
+}
+
+.concept-image-box {
+  flex: 1;
+}
+
+.concept-dummy-image {
+  width: 100%;
+  height: 450px;
+  background-color: #e0e0e0;
+}
+
+.menu-page {
+  padding: 100px 0;
+  background-color: #111111; 
+  color: #ffffff;            
+}
+
+.menu-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.menu-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #ffdf00; 
+}
+
+.menu-lists {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.menu-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.menu-item:hover {
+  color: #ffdf00;
+  transform: translateX(5px);
+}
+
+.menu-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.menu-name small {
+  font-size: 11px;
+  color: #aaaaaa;
+  font-weight: 400;
+  margin-left: 8px;
+}
+
+.menu-line {
+  flex: 1;
+  border-bottom: 2px dashed #333333; 
+  margin: 0 20px;
+  position: relative;
+  top: -4px;
+}
+
+.menu-item:hover .menu-line {
+  border-bottom-color: #ffdf00; 
+}
+
+.menu-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.menu-access {
+  background-color: #111111; 
+  color: #ffffff;
+  padding: 100px 0 120px;
+  border-top: 1px solid #222222; 
+}
+
+.menu-access-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px; 
+}
+
+.menu-access-info {
+  flex: 1;
+}
+
+.menu-access-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.shop-address {
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+}
+
+.shop-details p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.shop-details p span {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #aaaaaa;
+  display: inline-block;
+  width: 80px; 
+}
+
+.menu-access-map-box {
+  flex: 1;
+  height: 400px; 
+  background-color: #222222; 
+}
+
+.menu-map-dummy {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-dummy-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #555555;
+}
+
+.staff-page {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.staff-hero {
+  width: 100%;
+  height: 400px;            
+  background-color: #f0f0f0; 
+  overflow: hidden;
+}
+
+.shop-dummy-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-image-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #999999;
+}
+
+.staff-list-section {
+  padding: 80px 0 100px;
+}
+
+.staff-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.staff-container {
+  max-width: 1000px;       
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;  
+  gap: 80px;               
+}
+
+.staff-card {
+  flex: 1;
+  max-width: 380px;        
+  text-align: center;      
+}
+
+.staff-avatar-box {
+  width: 100%;
+  height: 380px;           
+  background-color: #e0e0e0;
+  margin-bottom: 25px;     
+}
+
+.staff-avatar-dummy {
+  width: 100%;
+  height: 100%;
+}
+
+.staff-post {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #777777;
+  margin-bottom: 5px;
+}
+
+.staff-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin-bottom: 15px;     
+}
+
+.staff-text {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.7;
+  text-align: left;        
+}
+
+.footer {
+  background-color: #ffffff;
+  border-top: 2px solid #000000; 
+  padding: 60px 0 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.footer-logo a {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #777777;
+}
+
+.footer-copy {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: #aaaaaa;
+  text-align: center;
+}
+/* ==========================================
+   GALLERY PAGE
+========================================== */
+.gallery-page {
+  padding: 100px 0;
+  background-color: #ffffff; /* ストリートな写真を引き立てる白背景 */
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gallery-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+
+/* 4つの正方形を横並びにする */
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.gallery-item-box {
+  flex: 1;
+  aspect-ratio: 1 / 1; /* 完璧な正方形を維持 */
+  background-color: #f0f0f0; /* 写真が入る前のダミーグレー */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #bbbbbb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* マウスホバーで少し浮き上がり、中身を黒文字に */
+.gallery-item-box:hover {
+  transform: translateY(-5px);
+  background-color: #e5e5e5;
+  color: #000000;
+}
+/* ==========================================
+   RESERVE PAGE
+========================================== */
+.flow-section {
+  padding: 100px 0 120px;
+  background-color: #ffffff;
+}
+
+.flow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.flow-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+
+/* 3つのステップを横並びにする */
+.flow-steps {
+  display: flex;
+  gap: 40px;
+}
+
+/* パキッとした太めの黒枠でストリート感を出すカード */
+.flow-card {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  padding: 40px 30px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* マウスを乗せたら背景を黒にして、文字を白く反転させる渋い演出 */
+.flow-card:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* カードの右上に大きく配置するステップ番号（01, 02, 03） */
+.flow-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #e5e5e5;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  transition: color 0.3s ease;
+}
+
+/* ホバー時に番号のグレーを少し暗くして馴染ませる */
+.flow-card:hover .flow-num {
+  color: #333333;
+}
+
+.flow-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.flow-card p {
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.7;
+  transition: color 0.3s ease;
+}
+
+/* ホバー時に説明文の文字色も白くする */
+.flow-card:hover p {
+  color: #eeeeee;
+}
+/* ==========================================
+   CONTACT (RESERVE FORM) PAGE
+========================================== */
+.contact-page {
+  padding: 100px 0 120px;
+  background-color: #ffffff;
+}
+
+.contact-container {
+  max-width: 600px; /* フォームが横に広がりすぎないようにタイトに絞る */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px; /* 入力項目ごとのすき間 */
+}
+
+/* 各入力項目の縦並びセット */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 項目名（NAME, TELなど） */
+.form-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+/* 入力欄（テキスト、電話番号、日付）とセレクトボックスの共通設定 */
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="datetime-local"],
+.form-group select {
+  width: 100%;
+  height: 55px;
+  padding: 0 15px;
+  font-size: 15px;
+  border: 2px solid #000000; /* ストリート感のある太い黒枠 */
+  border-radius: 0; /* 丸みを完全に消してシャープに */
+  background-color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* 入力欄をクリック（フォーカス）した時に、背景を薄いグレーにして「選択中」を際立たせる */
+.form-group input:focus,
+.form-group select:focus {
+  background-color: #f5f5f5;
+  box-shadow: 4px 4px 0px #000000; /* 右下にパキッとした影を出す */
+}
+
+/* 送信ボタンのボックス */
+.form-submit-box {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 送信ボタン本体 */
+.form-submit-btn {
+  display: inline-block;
+  width: 100%; /* 横幅いっぱいの力強いボタン */
+  height: 60px;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* ボタンホバーで白黒反転 */
+.form-submit-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 15px; 
+  }
+  
+  .header-nav ul {
+    gap: 20px;
+  }
+
+  .mv-title {
+    font-size: 48px;
+  }
+
+  .mv-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+
+  .mv-image {
+    object-position: center center;
+  }
+
+  .mv-text-content {
+    left: 20px;
+  }
+
+  .concept {
+    padding: 40px 0;
+  }
+
+  .concept-container {
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .concept-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .concept-lead {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .concept-description {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .concept-dummy-image {
+    height: 300px;
+  }
+
+  .menu-page {
+    padding: 60px 0;
+    background-color: #111111; 
+  }
+
+  .menu-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .menu-lists {
+    flex-direction: column;  
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .menu-group {
+    gap: 25px;
+  }
+
+  .menu-item {
+    font-size: 14px; 
+  }
+
+  .menu-name {
+    font-size: 14px;
+  }
+
+  .menu-price {
+    font-size: 14px;
+  }
+
+  .menu-access {
+    padding: 60px 0;
+  }
+
+  .menu-access-container {
+    flex-direction: column; 
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .menu-access-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .shop-address, .shop-details {
+    text-align: center; 
+  }
+  
+  .shop-details p span {
+    display: block; 
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  .menu-access-map-box {
+    width: 100%;
+    height: 300px; 
+  }
+
+  .staff-hero {
+    height: 250px;          
+  }
+
+  .staff-list-section {
+    padding: 40px 0 60px;
+  }
+
+  .staff-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .staff-container {
+    flex-direction: column; 
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px;
+  }
+
+  .staff-card {
+    max-width: 100%;
+  }
+
+  .staff-avatar-box {
+    height: 300px;          
+  }
+
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-container {
+    flex-direction: column; 
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-nav ul {
+    flex-direction: column; 
+    gap: 15px;
+  }
+  /* GALLERY PAGE (SP) */
+  .gallery-page {
+    padding: 60px 0;
+  }
+
+  .gallery-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .gallery-grid {
+    flex-direction: column; /* スマホでは縦並びに切り替え */
+    gap: 15px;
+    padding: 0 20px;
+  }
+  /* RESERVE PAGE (SP) */
+  .flow-section {
+    padding: 60px 0;
+  }
+
+  .flow-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .flow-steps {
+    flex-direction: column; /* スマホでは縦並びに切り替え */
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .flow-card {
+    padding: 30px 20px;
+  }
+
+  .flow-num {
+    font-size: 36px;
+    top: -5px;
+    right: 15px;
+  }
+  /* CONTACT PAGE (SP) */
+  .contact-page {
+    padding: 60px 0;
+  }
+
+  .contact-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    gap: 25px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="datetime-local"],
+  .form-group select {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .form-submit-btn {
+    height: 55px;
+    font-size: 14px;
+  }
+}

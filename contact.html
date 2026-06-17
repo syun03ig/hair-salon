@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOKING | hair salon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-logo">
+      <a href="index.html">hair salon</a>
+    </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="index.html#concept">CONCEPT</a></li>
+        <li><a href="menu.html">MENU</a></li>          
+        <li><a href="staff.html">STAFF</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="reserve.html">RESERVE</a></li>
+      </ul>
+    </nav>
+    <div class="header-btn">
+      <a href="contact.html" class="btn-reserve">RESERVE</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-page">
+      <div class="contact-container">
+        <h2 class="contact-heading">RESERVE FORM</h2>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name" placeholder="髪型 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tel">TEL</label>
+            <input type="tel" id="tel" name="tel" placeholder="090-1234-5678" required>
+          </div>
+
+          <div class="form-group">
+            <label for="menu">MENU</label>
+            <select id="menu" name="menu" required>
+              <option value="" disabled selected>メニューを選択してください</option>
+              <option value="cut">CUT</option>
+              <option value="color">CUT & COLOR</option>
+              <option value="perm">CUT & PERM</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">DATE</label>
+            <input type="datetime-local" id="date" name="date" required>
+          </div>
+
+          <div class="form-submit-box">
+            <button type="submit" class="form-submit-btn">SUBMIT</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="index.html">hair salon</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html#concept">CONCEPT</a></li>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="staff.html">STAFF</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="reserve.html">RESERVE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-copy">&copy; 2026 hair salon. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
