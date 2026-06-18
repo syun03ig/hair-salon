@@ -8,8 +8,12 @@
 
 body {
   font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
-  background-color: #ffffff;
+  background-image: url('../images/bg-concrete.png'); /* 画像を読み込む */
+  background-size: cover;       /* 画面全体にフィット */
+  background-attachment: fixed;  /* スクロールしても背景を固定 */
+  background-position: center;   /* 中央寄り */
   color: #000000;
+  overflow-x: hidden;           /* 巨大文字が横にはみ出てスクロールバーが出るのを防ぐ */
 }
 
 a {
@@ -916,5 +920,58 @@ ul {
   .form-submit-btn {
     height: 55px;
     font-size: 14px;
+  }
+}
+/* ==========================================
+   BACKGROUND BIG TEXT (左右の余白埋め)
+========================================== */
+.concept {
+  position: relative; /* 巨大文字の基準点にする */
+  background-color: transparent !important; /* 背景のコンクリートを透かす */
+  overflow: hidden; /* 文字がセクションからはみ出るのを防ぐ */
+}
+
+/* 左側の余白に巨大な「STREET」を配置 */
+.concept::before {
+  content: "STREET";
+  position: absolute;
+  top: 55%;
+  left: -5%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16vw; /* 画面幅に合わせて自動で巨大化 */
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03); /* 超極薄の黒（コンクリートに馴染む濃さ） */
+  letter-spacing: 0.05em;
+  z-index: 0; /* メインの文章の後ろに配置 */
+  pointer-events: none; /* マウスイベントを邪魔しない */
+}
+
+/* 右側の余白に巨大な「CULTURE」を配置 */
+.concept::after {
+  content: "CULTURE";
+  position: absolute;
+  top: 45%;
+  right: -8%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03);
+  letter-spacing: 0.05em;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 今あるテキストと画像ボックスが巨大文字より手前に来るように調整 */
+.concept-text, .concept-image-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* スマホの時は文字が邪魔になるので非表示にする */
+@media (max-width: 768px) {
+  .concept::before, .concept::after {
+    display: none;
   }
 }
