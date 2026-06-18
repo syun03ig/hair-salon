@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
-  background-image: url('images/bg-concrete.png'); /* 画像を読み込む */
+  background-image: url('../images/bg-concrete.png'); /* フォルダの中から外に出る「../」が正解です！ */
   background-size: cover;       /* 画面全体にフィット */
   background-attachment: fixed;  /* スクロールしても背景を固定 */
   background-position: center;   /* 中央寄り */
@@ -91,7 +91,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: #f0f0f0;
+  background-color: transparent; /* 透明にしてコンクリートを透かします */
 }
 
 .mv-text-content {
@@ -120,7 +120,7 @@ ul {
 
 .concept {
   padding: 100px 0;
-  background-color: transparent;
+  background-color: transparent; /* 白(#ffffff)を消して、完全に透明にしました */
 }
 
 .concept-container {
@@ -377,7 +377,7 @@ ul {
   padding: 0 40px;
   display: flex;
   justify-content: center;  
-  gap: 80px;               
+  gap: 80px;                
 }
 
 .staff-card {
@@ -473,7 +473,7 @@ ul {
 ========================================== */
 .gallery-page {
   padding: 100px 0;
-  background-color: #ffffff; /* ストリートな写真を引き立てる白背景 */
+  background-color: #ffffff;
 }
 
 .gallery-container {
@@ -492,7 +492,6 @@ ul {
   text-transform: uppercase;
 }
 
-/* 4つの正方形を横並びにする */
 .gallery-grid {
   display: flex;
   gap: 20px;
@@ -500,8 +499,8 @@ ul {
 
 .gallery-item-box {
   flex: 1;
-  aspect-ratio: 1 / 1; /* 完璧な正方形を維持 */
-  background-color: #f0f0f0; /* 写真が入る前のダミーグレー */
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,7 +511,6 @@ ul {
   cursor: pointer;
 }
 
-/* マウスホバーで少し浮き上がり、中身を黒文字に */
 .gallery-item-box:hover {
   transform: translateY(-5px);
   background-color: #e5e5e5;
@@ -542,13 +540,11 @@ ul {
   text-transform: uppercase;
 }
 
-/* 3つのステップを横並びにする */
 .flow-steps {
   display: flex;
   gap: 40px;
 }
 
-/* パキッとした太めの黒枠でストリート感を出すカード */
 .flow-card {
   flex: 1;
   background-color: #ffffff;
@@ -558,13 +554,11 @@ ul {
   transition: all 0.3s ease;
 }
 
-/* マウスを乗せたら背景を黒にして、文字を白く反転させる渋い演出 */
 .flow-card:hover {
   background-color: #000000;
   color: #ffffff;
 }
 
-/* カードの右上に大きく配置するステップ番号（01, 02, 03） */
 .flow-num {
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
@@ -576,7 +570,6 @@ ul {
   transition: color 0.3s ease;
 }
 
-/* ホバー時に番号のグレーを少し暗くして馴染ませる */
 .flow-card:hover .flow-num {
   color: #333333;
 }
@@ -596,7 +589,6 @@ ul {
   transition: color 0.3s ease;
 }
 
-/* ホバー時に説明文の文字色も白くする */
 .flow-card:hover p {
   color: #eeeeee;
 }
@@ -609,7 +601,7 @@ ul {
 }
 
 .contact-container {
-  max-width: 600px; /* フォームが横に広がりすぎないようにタイトに絞る */
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -627,17 +619,15 @@ ul {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 35px; /* 入力項目ごとのすき間 */
+  gap: 35px;
 }
 
-/* 各入力項目の縦並びセット */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* 項目名（NAME, TELなど） */
 .form-group label {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -645,7 +635,6 @@ ul {
   letter-spacing: 0.1em;
 }
 
-/* 入力欄（テキスト、電話番号、日付）とセレクトボックスの共通設定 */
 .form-group input[type="text"],
 .form-group input[type="tel"],
 .form-group input[type="datetime-local"],
@@ -654,31 +643,28 @@ ul {
   height: 55px;
   padding: 0 15px;
   font-size: 15px;
-  border: 2px solid #000000; /* ストリート感のある太い黒枠 */
-  border-radius: 0; /* 丸みを完全に消してシャープに */
+  border: 2px solid #000000;
+  border-radius: 0;
   background-color: #ffffff;
   font-family: inherit;
   outline: none;
   transition: all 0.3s ease;
 }
 
-/* 入力欄をクリック（フォーカス）した時に、背景を薄いグレーにして「選択中」を際立たせる */
 .form-group input:focus,
 .form-group select:focus {
   background-color: #f5f5f5;
-  box-shadow: 4px 4px 0px #000000; /* 右下にパキッとした影を出す */
+  box-shadow: 4px 4px 0px #000000;
 }
 
-/* 送信ボタンのボックス */
 .form-submit-box {
   margin-top: 20px;
   text-align: center;
 }
 
-/* 送信ボタン本体 */
 .form-submit-btn {
   display: inline-block;
-  width: 100%; /* 横幅いっぱいの力強いボタン */
+  width: 100%;
   height: 60px;
   background-color: #000000;
   color: #ffffff;
@@ -691,7 +677,6 @@ ul {
   transition: all 0.3s ease;
 }
 
-/* ボタンホバーで白黒反転 */
 .form-submit-btn:hover {
   background-color: #ffffff;
   color: #000000;
@@ -855,7 +840,7 @@ ul {
     flex-direction: column; 
     gap: 15px;
   }
-  /* GALLERY PAGE (SP) */
+  
   .gallery-page {
     padding: 60px 0;
   }
@@ -866,11 +851,11 @@ ul {
   }
 
   .gallery-grid {
-    flex-direction: column; /* スマホでは縦並びに切り替え */
+    flex-direction: column;
     gap: 15px;
     padding: 0 20px;
   }
-  /* RESERVE PAGE (SP) */
+  
   .flow-section {
     padding: 60px 0;
   }
@@ -881,7 +866,7 @@ ul {
   }
 
   .flow-steps {
-    flex-direction: column; /* スマホでは縦並びに切り替え */
+    flex-direction: column;
     gap: 30px;
     padding: 0 20px;
   }
@@ -895,7 +880,7 @@ ul {
     top: -5px;
     right: 15px;
   }
-  /* CONTACT PAGE (SP) */
+  
   .contact-page {
     padding: 60px 0;
   }
@@ -922,16 +907,16 @@ ul {
     font-size: 14px;
   }
 }
+
 /* ==========================================
    BACKGROUND BIG TEXT (左右の余白埋め)
 ========================================== */
 .concept {
-  position: relative; /* 巨大文字の基準点にする */
-  background-color: transparent !important; /* 背景のコンクリートを透かす */
-  overflow: hidden; /* 文字がセクションからはみ出るのを防ぐ */
+  position: relative; 
+  background-color: transparent !important; 
+  overflow: hidden; 
 }
 
-/* 左側の余白に巨大な「STREET」を配置 */
 .concept::before {
   content: "STREET";
   position: absolute;
@@ -939,15 +924,14 @@ ul {
   left: -5%;
   transform: translateY(-50%);
   font-family: 'Montserrat', sans-serif;
-  font-size: 16vw; /* 画面幅に合わせて自動で巨大化 */
+  font-size: 16vw; 
   font-weight: 900;
-  color: rgba(0, 0, 0, 0.03); /* 超極薄の黒（コンクリートに馴染む濃さ） */
+  color: rgba(0, 0, 0, 0.03); 
   letter-spacing: 0.05em;
-  z-index: 0; /* メインの文章の後ろに配置 */
-  pointer-events: none; /* マウスイベントを邪魔しない */
+  z-index: 0; 
+  pointer-events: none; 
 }
 
-/* 右側の余白に巨大な「CULTURE」を配置 */
 .concept::after {
   content: "CULTURE";
   position: absolute;
@@ -963,13 +947,11 @@ ul {
   pointer-events: none;
 }
 
-/* 今あるテキストと画像ボックスが巨大文字より手前に来るように調整 */
 .concept-text, .concept-image-box {
   position: relative;
   z-index: 1;
 }
 
-/* スマホの時は文字が邪魔になるので非表示にする */
 @media (max-width: 768px) {
   .concept::before, .concept::after {
     display: none;
