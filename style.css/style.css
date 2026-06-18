@@ -994,6 +994,8 @@ ul {
   position: relative;
   transform: scale(0.8);
   transition: transform 0.4s ease;
+  max-height: 85vh;          /* 画面の高さの85%を最大にする */
+  overflow-y: auto;          /* 中身がはみ出たら箱の中でスクロールさせる */
 }
 
 /* 表示されたときに中身の箱も少しズームアップさせる演出 */
