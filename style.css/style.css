@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Montserrat', "Helvetica Neue", Arial, sans-serif;
-  background-image: url('../images/bg-concrete.png'); /* 画像を読み込む */
+  background-image: url('images/bg-concrete.png'); /* 画像を読み込む */
   background-size: cover;       /* 画面全体にフィット */
   background-attachment: fixed;  /* スクロールしても背景を固定 */
   background-position: center;   /* 中央寄り */
@@ -120,7 +120,7 @@ ul {
 
 .concept {
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .concept-container {
