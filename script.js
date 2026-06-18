@@ -20,7 +20,19 @@ document.querySelectorAll(".menu-item").forEach(item => {
   item.style.cursor = "pointer";
 
   item.addEventListener("click", () => {
-    const fullText = item.querySelector(".menu-name").childNodes[0].textContent.trim();
+    const menuNameElement = item.querySelector(".menu-name");
+    
+    // 💡 安全対策：smallタグ（補足テキスト）を一時的に除外して、純粋な大文字のメニュー名だけを確実に取得します
+    // これにより、HTML側の改行やスペースに左右されなくなります
+    let fullText = "";
+    if (menuNameElement) {
+      // cloneNodeで複製してから小文字タグを消すことで、元の画面の表示を崩さずに文字だけ抽出できます
+      const clone = menuNameElement.cloneNode(true);
+      const smallTag = clone.querySelector("small");
+      if (smallTag) smallTag.remove();
+      fullText = clone.textContent.trim();
+    }
+
     modalTitle.textContent = fullText;
     modalDesc.textContent = menuDetails[fullText] || "詳細はお問い合わせください。";
     modal.classList.add("is-show");
