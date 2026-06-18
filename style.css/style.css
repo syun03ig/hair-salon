@@ -682,6 +682,150 @@ ul {
   color: #000000;
 }
 
+/* ==========================================
+   BACKGROUND BIG TEXT (左右の余白埋め)
+========================================== */
+.concept {
+  position: relative; 
+  background-color: transparent !important; 
+  overflow: hidden; 
+}
+
+.concept::before {
+  content: "STREET";
+  position: absolute;
+  top: 55%;
+  left: -5%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16vw; 
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03); 
+  letter-spacing: 0.05em;
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+.concept::after {
+  content: "CULTURE";
+  position: absolute;
+  top: 45%;
+  right: -8%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16vw;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.03);
+  letter-spacing: 0.05em;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.concept-text, .concept-image-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   POPUP MODAL STYLE (ポップアップのデザインベース)
+========================================== */
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* 背景をかなり暗めのスケルトンに */
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* クラス「is-show」がついたらフワッと表示 */
+.menu-modal.is-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ポップアップの白い箱（ストリート感のあるパキッとした枠線デザイン） */
+.modal-content {
+  background-color: #ffffff;
+  color: #000000;
+  width: 90%;
+  max-width: 500px;
+  padding: 50px 40px;
+  border: 4px solid #000000; /* 太い黒枠でトガらせる */
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 0.4s ease;
+  max-height: 85vh;          /* 画面の高さの85%を最大にする */
+  overflow-y: auto;          /* 中身がはみ出たら箱の中でスクロールさせる */
+}
+
+/* 表示されたときに中身の箱も少しズームアップさせる演出 */
+.menu-modal.is-show .modal-content {
+  transform: scale(1);
+}
+
+/* × ボタン（右上） */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #ffdf00; /* ホバーでテーマカラーの黄色に */
+}
+
+/* ポップアップの中のタイトル */
+.modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #000000;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+/* ポップアップの中の説明文 */
+.modal-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333333;
+}
+
+/* ==========================================
+   POPUP MODAL IMAGE STYLE
+========================================== */
+.modal-image-box {
+  width: 100%;
+  height: 250px;            /* ポップアップ内画像の高さ */
+  margin-bottom: 20px;
+  border: 2px solid #000000; /* 画像にも太めの黒枠をつけてエッジを効かせる */
+  overflow: hidden;
+  background-color: #f0f0f0; /* 画像が読み込まれるまでのダミー背景 */
+}
+
+.modal-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* 画像の縦横比を崩さずに綺麗に中央に収める */
+}
+
+/* ==========================================
+   MEDIA QUERIES (💡すべてのスマホ用上書きルールはここに集約！)
+========================================== */
 @media (max-width: 768px) {
   .header {
     padding: 0 15px; 
@@ -906,133 +1050,22 @@ ul {
     height: 55px;
     font-size: 14px;
   }
-}
 
-/* ==========================================
-   BACKGROUND BIG TEXT (左右の余白埋め)
-========================================== */
-.concept {
-  position: relative; 
-  background-color: transparent !important; 
-  overflow: hidden; 
-}
-
-.concept::before {
-  content: "STREET";
-  position: absolute;
-  top: 55%;
-  left: -5%;
-  transform: translateY(-50%);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16vw; 
-  font-weight: 900;
-  color: rgba(0, 0, 0, 0.03); 
-  letter-spacing: 0.05em;
-  z-index: 0; 
-  pointer-events: none; 
-}
-
-.concept::after {
-  content: "CULTURE";
-  position: absolute;
-  top: 45%;
-  right: -8%;
-  transform: translateY(-50%);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16vw;
-  font-weight: 900;
-  color: rgba(0, 0, 0, 0.03);
-  letter-spacing: 0.05em;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.concept-text, .concept-image-box {
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
   .concept::before, .concept::after {
     display: none;
   }
-  
-}
-/* ==========================================
-   POPUP MODAL STYLE (ポップアップのデザイン)
-========================================== */
-.menu-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* 背景をかなり暗めのスケルトンに */
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
 
-/* クラス「is-show」がついたらフワッと表示 */
-.menu-modal.is-show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ポップアップの白い箱（ストリート感のあるパキッとした枠線デザイン） */
-.modal-content {
-  background-color: #ffffff;
-  color: #000000;
-  width: 90%;
-  max-width: 500px;
-  padding: 50px 40px;
-  border: 4px solid #000000; /* 太い黒枠でトガらせる */
-  position: relative;
-  transform: scale(0.8);
-  transition: transform 0.4s ease;
-  max-height: 85vh;          /* 画面の高さの85%を最大にする */
-  overflow-y: auto;          /* 中身がはみ出たら箱の中でスクロールさせる */
-}
-
-/* 表示されたときに中身の箱も少しズームアップさせる演出 */
-.menu-modal.is-show .modal-content {
-  transform: scale(1);
-}
-
-/* × ボタン（右上） */
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 32px;
-  font-weight: 900;
-  cursor: pointer;
-  line-height: 1;
-  transition: color 0.2s;
-}
-
-.modal-close:hover {
-  color: #ffdf00; /* ホバーでテーマカラーの黄色に */
-}
-
-/* ポップアップの中のタイトル */
-.modal-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  border-bottom: 2px solid #000000;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-}
-
-/* ポップアップの中の説明文 */
-.modal-description {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #333333;
+  /* 💡 ポップアップのスマホ用調整（PCスタイルより下に配置したことで確実に効くようになります） */
+  .modal-content {
+    padding: 40px 20px 30px; /* 余白を狭くして文字エリアを広げる */
+  }
+  .modal-image-box {
+    height: 180px;            /* 画像の高さをスマホ用に少し縮める */
+    margin-bottom: 15px;
+  }
+  .modal-title {
+    font-size: 22px;          /* タイトルをスマホ用に一回り小さく */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
 }
