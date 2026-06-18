@@ -14,6 +14,7 @@ const modal = document.getElementById("menu-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
 const closeBtn = document.getElementById("modal-close");
+const body = document.body; // 💡 スクロール固定用にbodyを取得
 
 // すべてのメニュー項目にクリックイベントを設定
 document.querySelectorAll(".menu-item").forEach(item => {
@@ -23,10 +24,8 @@ document.querySelectorAll(".menu-item").forEach(item => {
     const menuNameElement = item.querySelector(".menu-name");
     
     // 💡 安全対策：smallタグ（補足テキスト）を一時的に除外して、純粋な大文字のメニュー名だけを確実に取得します
-    // これにより、HTML側の改行やスペースに左右されなくなります
     let fullText = "";
     if (menuNameElement) {
-      // cloneNodeで複製してから小文字タグを消すことで、元の画面の表示を崩さずに文字だけ抽出できます
       const clone = menuNameElement.cloneNode(true);
       const smallTag = clone.querySelector("small");
       if (smallTag) smallTag.remove();
@@ -35,18 +34,24 @@ document.querySelectorAll(".menu-item").forEach(item => {
 
     modalTitle.textContent = fullText;
     modalDesc.textContent = menuDetails[fullText] || "詳細はお問い合わせください。";
+    
     modal.classList.add("is-show");
+    body.style.overflow = "hidden"; // 💡 開いたときに背景のスクロールを固定
   });
 });
 
-// 閉じるボタンを押したら閉じる
-closeBtn.addEventListener("click", () => {
+// モダールを閉じる共通の処理
+const closeModal = () => {
   modal.classList.remove("is-show");
-});
+  body.style.overflow = ""; // 💡 閉じたときにスクロール固定を解除
+};
+
+// 閉じるボタンを押したら閉じる
+closeBtn.addEventListener("click", closeModal);
 
 // 背景の黒い部分を押しても閉じる
 modal.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modal.classList.remove("is-show");
+    closeModal();
   }
 });
