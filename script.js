@@ -26,7 +26,7 @@ const menuDetails = {
   },
   "TREATMENT": {
     text: "繰り返すブリーチやカラーで傷んだ髪を、芯から補修して芯のある強い髪へ。髪の質感を極限まで高めます。",
-    image: "images/menu-treatment.jpg"
+    image: "images/menu-treatment.png"
   },
   "HEAD SPA": {
     text: "頭皮のディープクレンジングと極上のマッサージ。日頃のストレスや頭皮のコリをほぐし、髪の土台を整えます。",
