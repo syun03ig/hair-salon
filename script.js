@@ -16,9 +16,9 @@ const menuDetails = {
     text: "ハイブリーチ、バレイヤージュ、インナーカラーなど、周囲と差がつくトリッキーで鮮やかなデザインカラーを提案します。",
     image: "images/menu-design.png" 
   },
-  "PERM": {
+ "PERM": {
     text: "無造作なストリート感を演出するデザインパーマ。ツイストやスパイラルなど、強めの特殊パーマもご相談ください。",
-    image: "images/menu-perm.jpg"
+    image: "images/menu-perm.png" 
   },
   "DIGITAL PERM": {
     text: "コテで巻いたような立体的なカールが長持ちするパーマ。縮毛矯正がかかっている髪にも対応可能です。",
