@@ -30,7 +30,7 @@ const menuDetails = {
   },
   "HEAD SPA": {
     text: "頭皮のディープクレンジングと極上のマッサージ。日頃のストレスや頭皮のコリをほぐし、髪の土台を整えます。",
-    image: "images/menu-spa.jpg"
+    image: "images/menu-spa.png"
   }
 };
 
