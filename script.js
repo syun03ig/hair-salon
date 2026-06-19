@@ -6,7 +6,7 @@ const menuDetails = {
   },
   "BANG CUT": {
     text: "印象を大きく左右する前髪を、ミリ単位でこだわってカットします。メンテナンスや、ちょっとしたイメチェンに。",
-    image: "images/menu-bang.jpg"
+    image: "images/menu-bang.png" 
   },
   "COLOR": {
     text: "髪へのダメージを最小限に抑えつつ、深みのあるクールな発色を叶えます。根元のリタッチカラーです。",
