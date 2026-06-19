@@ -22,7 +22,7 @@ const menuDetails = {
   },
   "DIGITAL PERM": {
     text: "コテで巻いたような立体的なカールが長持ちするパーマ。縮毛矯正がかかっている髪にも対応可能です。",
-    image: "images/menu-digital-perm.jpg"
+    image: "images/menu-digital-perm.png"
   },
   "TREATMENT": {
     text: "繰り返すブリーチやカラーで傷んだ髪を、芯から補修して芯のある強い髪へ。髪の質感を極限まで高めます。",
