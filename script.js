@@ -10,11 +10,11 @@ const menuDetails = {
   },
  "COLOR": {
     text: "髪へのダメージを最小限に抑えつつ、深みのあるクールな発色を叶えます。根元のリタッチカラーです。",
-    image: "images/menu-color.png" // 
+    image: "images/menu-color.png" 
   },
   "DESIGN COLOR": {
     text: "ハイブリーチ、バレイヤージュ、インナーカラーなど、周囲と差がつくトリッキーで鮮やかなデザインカラーを提案します。",
-    image: "images/menu-design.jpg"
+    image: "images/menu-design.png" 
   },
   "PERM": {
     text: "無造作なストリート感を演出するデザインパーマ。ツイストやスパイラルなど、強めの特殊パーマもご相談ください。",
