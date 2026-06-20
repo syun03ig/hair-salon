@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fadeElements = document.querySelectorAll('.fade-el');
   
-  // 💡 安全な書き方に変更：要素がある時だけセンサーを起動（サボらない！）
+  
   if (fadeElements.length > 0) {
     const observerOptions = {
       root: null,
