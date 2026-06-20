@@ -1056,26 +1056,29 @@ ul {
     display: none;
   }
 
-/* 💡 ポップアップのスマホ用調整（小さくさせず、存在感を出す設定に変更） */
+  /* ポップアップのスマホ用調整 */
   .modal-content {
-    width: 92%;               /* 💡画面の横幅をめいっぱい大きく使う */
-    padding: 35px 25px 30px;  /* 💡余白を程よく取ってふっくらさせる */
+    width: 92%;               
+    padding: 35px 25px 30px;  
   }
   .modal-image-box {
-    height: 380px;            /* 💡180pxから280pxに大幅アップ！写真を主役に */
+    height: 380px;            
     margin-bottom: 20px;
   }
   .modal-title {
-    font-size: 26px;          /* 💡22pxから26pxにアップ！タイトルを力強く */
+    font-size: 26px;          
     padding-bottom: 10px;
     margin-bottom: 15px;
   }
   .modal-description {
-    font-size: 16px;          /* 💡（もしあれば）説明文の文字もハッキリ大きく */
+    font-size: 16px;          
     line-height: 1.6;
   }
+} /* 💡 542行目：ここに閉じカッコを入れることで、スマホ用の上書きルールを正しく終了させました！ */
+
+
 /* ==========================================
-   NEWS & FEATURES SECTION
+   NEWS & FEATURES SECTION （ここからはPC大画面でも正しく読み込まれます）
    ========================================== */
 .news-section, .features-section {
   max-width: 1200px;
@@ -1142,7 +1145,7 @@ ul {
   margin-bottom: 120px;
 }
 .feature-row.row-reverse {
-  flex-direction: row-reverse; /* 💡これで2つ目が自動で右画像・左テキストに反転します */
+  flex-direction: row-reverse; /* 2つ目が自動で右画像・左テキストに反転 */
 }
 .feature-img-box, .feature-text-box {
   flex: 1;
@@ -1151,7 +1154,7 @@ ul {
 .feature-dummy-img {
   width: 100%;
   border: 2px solid #000;
-  box-shadow: 8px 8px 0px #000; /* 💡ストリート感を出す黒の塊影 */
+  box-shadow: 8px 8px 0px #000; /* ストリート感を出す黒の塊影 */
   transition: transform 0.3s ease;
 }
 .feature-dummy-img:hover {
@@ -1199,18 +1202,18 @@ ul {
    ふわっと出すための初期設定（仕掛け）
    ========================================== */
 .fade-el {
-  opacity: 0;                     /* 💡最初は完全に透明 */
-  transform: translateY(50px);    /* 💡少し下に下げておく */
-  transition: opacity 1.0s ease, transform 1.0s ease; /* 💡1秒かけて滑らかに動かす */
+  opacity: 0;                     /* 最初は完全に透明 */
+  transform: translateY(50px);    /* 少し下に下げておく */
+  transition: opacity 1.0s ease, transform 1.0s ease; /* 1秒かけて滑らかに動かす */
 }
 
-/* 💡 JavaScriptでこのクラスがついた瞬間に、上の設定が解除されてふわっと現れます */
+/* JavaScriptでこのクラスがついた瞬間に、上の設定が解除されてふわっと現れる */
 .fade-el.is-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* レスポンシブ（スマホ対応） */
+/* 追加要素のスマホ対応 */
 @media (max-width: 768px) {
   .news-item {
     flex-direction: column;
