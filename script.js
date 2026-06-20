@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (fadeElements.length > 0) {
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -60px 0px', // 画面の下端より少し手前で早めに反応させる設定
+      rootMargin: '0px 0px -100px 0px', // 画面の下端より少し手前で早めに反応させる設定
       threshold: 0.1
     };
 
