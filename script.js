@@ -93,3 +93,33 @@ modal.addEventListener("click", (e) => {
     closeModal();
   }
 });
+
+
+/* ==========================================================================
+   💡 ここから下にスクロール連動フェードイン用の処理を合体させました！
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.fade-el');
+
+  // トップページ以外のページ（fade-elが存在しないページ）でエラーが出るのを防ぐガード
+  if (fadeElements.length === 0) return;
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  fadeElements.forEach(el => {
+    observer.observe(el);
+  });
+});
