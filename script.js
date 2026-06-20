@@ -1,4 +1,35 @@
-// メニューごとの詳細テキストと画像のパスを設定
+// ==========================================
+// 1. トップページ用：スクロール連動フェードイン
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeElements = document.querySelectorAll('.fade-el');
+  
+  // 💡 安全な書き方に変更：要素がある時だけセンサーを起動（サボらない！）
+  if (fadeElements.length > 0) {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -60px 0px', // 画面の下端より少し手前で早めに反応させる設定
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-show');
+          observer.unobserve(entry.target); // 一度見えたら監視終了
+        }
+      });
+    }, observerOptions);
+
+    fadeElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+});
+
+// ==========================================
+// 2. メニューページ用：ポップアップ（モダール）の設定
+// ==========================================
 const menuDetails = {
   "CUT": {
     text: "一人ひとりの骨格や髪質、生え癖を見極め、エッジの効いたストリートスタイルに仕上げます。ご自宅での再現性も抜群です。",
@@ -34,92 +65,52 @@ const menuDetails = {
   }
 };
 
-// 要素の取得
 const modal = document.getElementById("menu-modal");
 const modalTitle = document.getElementById("modal-title");
 const modalDesc = document.getElementById("modal-description");
-const modalImage = document.getElementById("modal-image"); // 💡 追加したimgタグを取得
+const modalImage = document.getElementById("modal-image");
 const closeBtn = document.getElementById("modal-close");
 const body = document.body;
 
-// すべてのメニュー項目にクリックイベントを設定
-document.querySelectorAll(".menu-item").forEach(item => {
-  item.style.cursor = "pointer";
+// 💡 メニューページでのみ確実に実行する設定
+if (modal) {
+  document.querySelectorAll(".menu-item").forEach(item => {
+    item.style.cursor = "pointer";
+    item.addEventListener("click", () => {
+      const menuNameElement = item.querySelector(".menu-name");
+      let fullText = "";
+      if (menuNameElement) {
+        const clone = menuNameElement.cloneNode(true);
+        const smallTag = clone.querySelector("small");
+        if (smallTag) smallTag.remove();
+        fullText = clone.textContent.trim();
+      }
 
-  item.addEventListener("click", () => {
-    const menuNameElement = item.querySelector(".menu-name");
-    
-    // smallタグを除外して純粋なメニュー名を取得
-    let fullText = "";
-    if (menuNameElement) {
-      const clone = menuNameElement.cloneNode(true);
-      const smallTag = clone.querySelector("small");
-      if (smallTag) smallTag.remove();
-      fullText = clone.textContent.trim();
-    }
+      modalTitle.textContent = fullText;
+      const currentMenu = menuDetails[fullText];
 
-    // タイトルを設定
-    modalTitle.textContent = fullText;
-
-    // クリックされたメニューのデータを取得
-    const currentMenu = menuDetails[fullText];
-
-    if (currentMenu) {
-      modalDesc.textContent = currentMenu.text;
-      modalImage.src = currentMenu.image; // 💡 画像のパスを設定
-      modalImage.alt = fullText + "のイメージ画像";
-      modalImage.style.display = "block"; // 画像を表示する
-    } else {
-      modalDesc.textContent = "詳細はお問い合わせください。";
-      modalImage.style.display = "none";  // データがない場合は画像を隠す
-    }
-    
-    // モダールを表示してスクロールを固定
-    modal.classList.add("is-show");
-    body.style.overflow = "hidden";
+      if (currentMenu) {
+        modalDesc.textContent = currentMenu.text;
+        modalImage.src = currentMenu.image;
+        modalImage.alt = fullText + "のイメージ画像";
+        modalImage.style.display = "block";
+      } else {
+        modalDesc.textContent = "詳細はお問い合わせください。";
+        modalImage.style.display = "none";
+      }
+      
+      modal.classList.add("is-show");
+      body.style.overflow = "hidden";
+    });
   });
-});
 
-// モダールを閉じる処理
-const closeModal = () => {
-  modal.classList.remove("is-show");
-  body.style.overflow = "";
-};
-
-closeBtn.addEventListener("click", closeModal);
-
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    closeModal();
-  }
-});
-
-
-/* ==========================================================================
-   💡 ここから下にスクロール連動フェードイン用の処理を合体させました！
-   ========================================================================== */
-document.addEventListener('DOMContentLoaded', () => {
-  const fadeElements = document.querySelectorAll('.fade-el');
-
-  // トップページ以外のページ（fade-elが存在しないページ）でエラーが出るのを防ぐガード
-  if (fadeElements.length === 0) return;
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
+  const closeModal = () => {
+    modal.classList.remove("is-show");
+    body.style.overflow = "";
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  fadeElements.forEach(el => {
-    observer.observe(el);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
   });
-});
+}
