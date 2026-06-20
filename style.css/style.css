@@ -1056,17 +1056,22 @@ ul {
     display: none;
   }
 
-  /* 💡 ポップアップのスマホ用調整（PCスタイルより下に配置したことで確実に効くようになります） */
+/* 💡 ポップアップのスマホ用調整（小さくさせず、存在感を出す設定に変更） */
   .modal-content {
-    padding: 40px 20px 30px; /* 余白を狭くして文字エリアを広げる */
+    width: 92%;               /* 💡画面の横幅をめいっぱい大きく使う */
+    padding: 35px 25px 30px;  /* 💡余白を程よく取ってふっくらさせる */
   }
   .modal-image-box {
-    height: 180px;            /* 画像の高さをスマホ用に少し縮める */
-    margin-bottom: 15px;
+    height: 280px;            /* 💡180pxから280pxに大幅アップ！写真を主役に */
+    margin-bottom: 20px;
   }
   .modal-title {
-    font-size: 22px;          /* タイトルをスマホ用に一回り小さく */
+    font-size: 26px;          /* 💡22pxから26pxにアップ！タイトルを力強く */
     padding-bottom: 10px;
     margin-bottom: 15px;
   }
-}
+  .modal-description {
+    font-size: 16px;          /* 💡（もしあれば）説明文の文字もハッキリ大きく */
+    line-height: 1.6;
+  }
+
