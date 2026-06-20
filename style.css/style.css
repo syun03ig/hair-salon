@@ -1074,4 +1074,158 @@ ul {
     font-size: 16px;          /* 💡（もしあれば）説明文の文字もハッキリ大きく */
     line-height: 1.6;
   }
+/* ==========================================
+   NEWS & FEATURES SECTION
+   ========================================== */
+.news-section, .features-section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
 
+/* タイトル周り */
+.section-title-box {
+  margin-bottom: 40px;
+}
+.section-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 0.1em;
+  margin-bottom: 5px;
+}
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+/* NEWSのリスト */
+.news-container {
+  border-top: 2px solid #000;
+}
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 25px 10px;
+  border-bottom: 1px solid #ddd;
+}
+.news-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #666;
+  width: 120px;
+}
+.news-category {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  padding: 3px 8px;
+  margin-right: 20px;
+  letter-spacing: 0.05em;
+}
+.news-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* でかでかリンク（左右交互レイアウト） */
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+.feature-row.row-reverse {
+  flex-direction: row-reverse; /* 💡これで2つ目が自動で右画像・左テキストに反転します */
+}
+.feature-img-box, .feature-text-box {
+  flex: 1;
+  width: 50%;
+}
+.feature-dummy-img {
+  width: 100%;
+  border: 2px solid #000;
+  box-shadow: 8px 8px 0px #000; /* 💡ストリート感を出す黒の塊影 */
+  transition: transform 0.3s ease;
+}
+.feature-dummy-img:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* テキストコンテンツ */
+.feature-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 10px;
+}
+.feature-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+.feature-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+}
+.feature-link {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+.feature-link:hover {
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   ふわっと出すための初期設定（仕掛け）
+   ========================================== */
+.fade-el {
+  opacity: 0;                     /* 💡最初は完全に透明 */
+  transform: translateY(50px);    /* 💡少し下に下げておく */
+  transition: opacity 1.0s ease, transform 1.0s ease; /* 💡1秒かけて滑らかに動かす */
+}
+
+/* 💡 JavaScriptでこのクラスがついた瞬間に、上の設定が解除されてふわっと現れます */
+.fade-el.is-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* レスポンシブ（スマホ対応） */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .feature-row, .feature-row.row-reverse {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+  .feature-img-box, .feature-text-box {
+    width: 100%;
+  }
+  .feature-title {
+    font-size: 28px;
+  }
+}
