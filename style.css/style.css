@@ -469,7 +469,7 @@ ul {
   text-align: center;
 }
 /* ==========================================
-   GALLERY PAGE
+   GALLERY PAGE (💡ヨコ並びから、縦横タイルのグリッドレイアウトに強化！)
 ========================================== */
 .gallery-page {
   padding: 100px 0;
@@ -492,15 +492,19 @@ ul {
   text-transform: uppercase;
 }
 
+/* 💡 PCでは横3列に自動で折り返して無限に綺麗に並ぶ魔法の設定 */
 .gallery-grid {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; 
 }
 
 .gallery-item-box {
-  flex: 1;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;       /* 写真の比率を綺麗な正方形に固定 */
   background-color: #f0f0f0;
+  border: 2px solid #000000;  /* ストリートな黒枠 */
+  box-shadow: 6px 6px 0px #000000; /* エッジの効いた塊の影 */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,13 +513,23 @@ ul {
   color: #bbbbbb;
   transition: all 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
+/* ホバーしたときに右下にスッと沈み込むストリート風アニメーション */
 .gallery-item-box:hover {
-  transform: translateY(-5px);
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px #000000;
   background-color: #e5e5e5;
   color: #000000;
 }
+
+.gallery-item-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* 画像を歪ませずに正方形にピタッと収める */
+}
+
 /* ==========================================
    RESERVE PAGE
 ========================================== */
@@ -995,8 +1009,10 @@ ul {
     margin-bottom: 40px;
   }
 
+  /* 💡 スマホでは横2列のコンパクトなタイル並びに上書きルールを設定！ */
   .gallery-grid {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 0 20px;
   }
@@ -1074,11 +1090,11 @@ ul {
     font-size: 16px;          
     line-height: 1.6;
   }
-} /* 💡 542行目：ここに閉じカッコを入れることで、スマホ用の上書きルールを正しく終了させました！ */
+} /* 💡 542行目：スマホ用上書きルール終了 */
 
 
 /* ==========================================
-   NEWS & FEATURES SECTION （ここからはPC大画面でも正しく読み込まれます）
+   NEWS & FEATURES SECTION 
    ========================================== */
 .news-section, .features-section {
   max-width: 1200px;
@@ -1145,7 +1161,7 @@ ul {
   margin-bottom: 120px;
 }
 .feature-row.row-reverse {
-  flex-direction: row-reverse; /* 2つ目が自動で右画像・左テキストに反転 */
+  flex-direction: row-reverse; 
 }
 .feature-img-box, .feature-text-box {
   flex: 1;
@@ -1154,7 +1170,7 @@ ul {
 .feature-dummy-img {
   width: 100%;
   border: 2px solid #000;
-  box-shadow: 8px 8px 0px #000; /* ストリート感を出す黒の塊影 */
+  box-shadow: 8px 8px 0px #000; 
   transition: transform 0.3s ease;
 }
 .feature-dummy-img:hover {
@@ -1199,15 +1215,14 @@ ul {
 }
 
 /* ==========================================
-   ふわっと出すための初期設定（仕掛け）
+   ふわっと出すための初期設定
    ========================================== */
 .fade-el {
-  opacity: 0;                     /* 最初は完全に透明 */
-  transform: translateY(50px);    /* 少し下に下げておく */
-  transition: opacity 1.0s ease, transform 1.0s ease; /* 1秒かけて滑らかに動かす */
+  opacity: 0;                     
+  transform: translateY(50px);    
+  transition: opacity 1.0s ease, transform 1.0s ease; 
 }
 
-/* JavaScriptでこのクラスがついた瞬間に、上の設定が解除されてふわっと現れる */
 .fade-el.is-show {
   opacity: 1;
   transform: translateY(0);
