@@ -1247,3 +1247,186 @@ ul {
     font-size: 28px;
   }
 }
+/* ==========================================
+   RESERVE PAGE ADDITIONAL STYLES
+   ========================================== */
+
+/* --- 案①: 予約ボタンエリア --- */
+.reserve-actions {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a; /* 少し濃いめのダークグレーでボックス化 */
+  border: 1px solid #333;
+}
+
+.reserve-action-lead {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.reserve-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 画面が広いときはボタンを横並びにする */
+@media (min-width: 768px) {
+  .reserve-buttons {
+    flex-direction: row;
+    max-width: 600px;
+  }
+}
+
+.btn-main-reserve,
+.btn-line-reserve {
+  flex: 1;
+  display: inline-block;
+  padding: 18px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* WEB予約ボタン（オレンジのアクセント） */
+.btn-main-reserve {
+  background-color: transparent;
+  color: #ff6b00; /* 鏡のバックライトに合わせたオレンジ */
+  border: 1px solid #ff6b00;
+}
+
+.btn-main-reserve:hover {
+  background-color: #ff6b00;
+  color: #fff;
+}
+
+/* 公式LINEボタン（グリーンのアクセント） */
+.btn-line-reserve {
+  background-color: transparent;
+  color: #06c755; /* LINEカラー */
+  border: 1px solid #06c755;
+}
+
+.btn-line-reserve:hover {
+  background-color: #06c755;
+  color: #fff;
+}
+
+.reserve-buttons .arrow {
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-main-reserve:hover .arrow,
+.btn-line-reserve:hover .arrow {
+  transform: translateX(5px);
+}
+
+
+/* --- 案②＆③: Q&A・注意事項セクション --- */
+.reserve-info-section {
+  padding: 100px 0;
+  background-color: #0d0d0d;
+  border-top: 1px solid #222;
+}
+
+.reserve-info-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+@media (min-width: 768px) {
+  .reserve-info-container {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .reserve-faq, .reserve-notes {
+    flex: 1;
+  }
+}
+
+.info-subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+/* 見出しの下にさりげないストリート感のあるアンダーライン */
+.info-subheading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 3px;
+  background-color: #ff6b00;
+}
+
+/* FAQのデザイン */
+.reserve-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.faq-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.faq-item p {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* 注意事項のデザイン */
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notes-list li {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* 文頭に「※」の代わりに無骨なドットを配置 */
+.notes-list li::before {
+  content: '■';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 10px;
+  color: #ff6b00;
+}
