@@ -1430,3 +1430,79 @@ ul {
   font-size: 10px;
   color: #ff6b00;
 }
+/* ==========================================
+   STAFF / GALLERY / RESERVE PAGE CONCRETE UNIFICATION
+   ========================================== */
+
+/* 3つのページの背景を完全に透明にし、bodyのコンクリート画像をそのまま透けさせる */
+.staff-page,
+.gallery-page,
+.flow-section {
+  background-color: transparent !important;
+  color: #000000 !important; /* 文字はコンクリに映えるパキッとした黒 */
+}
+
+/* 予約ページのQ&A・注意事項セクションも透明にしてコンクリと一体化 */
+.reserve-info-section {
+  background-color: transparent !important;
+  border-top: 2px solid #000000 !important; /* 区切り線も無骨な黒に変更 */
+}
+
+/* 各ページのメイン大見出し（STAFF, GALLERY, HOW TO RESERVE）の色を黒に統一 */
+.staff-heading,
+.gallery-heading,
+.flow-heading {
+  color: #000000 !important;
+}
+
+/* --- スタッフページ（staff.html）の微調整 --- */
+.staff-list-section {
+  background-color: transparent !important;
+}
+
+.staff-card {
+  background-color: #ffffff !important; /* カードはあえて白にして、コンクリ背景からパキッと浮かせる */
+  border: 2px solid #000000 !important; /* ストリート感のある太めの黒枠 */
+  box-shadow: 6px 6px 0px #000000 !important; /* ギャラリーとお揃いの、ボカさない硬い影 */
+}
+
+.staff-name {
+  color: #000000 !important;
+}
+
+.staff-post {
+  color: #ff6b00 !important; /* 役職名はアクセントのオレンジにしてストリート感を強調！ */
+}
+
+.staff-text {
+  color: #222222 !important; /* 説明文は濃いめのグレーで読みやすく */
+}
+
+/* --- ギャラリーページ（gallery.html）の微調整 --- */
+/* すでに黒枠と影が付いているので、背景を白にしてコンクリの上にパキッと並べます */
+.gallery-item-box {
+  background-color: #ffffff !important;
+}
+
+/* --- 予約ページ（reserve.html）の微調整 --- */
+/* 予約の3ステップカードも、スタッフカードとお揃いの黒枠・硬い影デザインに統一 */
+.flow-card {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  color: #000000 !important;
+}
+
+/* Q&Aの文字色をコンクリ背景で見えやすいように黒・濃いグレーに変更 */
+.info-subheading {
+  color: #000000 !important;
+}
+
+.faq-item h4 {
+  color: #000000 !important;
+}
+
+.faq-item p,
+.notes-list li {
+  color: #333333 !important;
+}
