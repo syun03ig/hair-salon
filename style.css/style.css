@@ -1507,22 +1507,38 @@ ul {
   color: #333333 !important;
 }
 /* ==========================================
-   RESERVE PAGE HOVER REPAIR (FINAL OVERRIDE)
+   RESERVE PAGE HOVER REPAIR (FINAL)
    ========================================== */
 
-/* カーソルが乗った時、強力な!importantで背景を真っ黒、文字を真っ白に強制反転 */
-.flow-card:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+/* 予約ページのカードの背景を常に「白」、文字を常に「黒」に固定する */
+.flow-section .flow-card {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
 
-/* カード内のタイトル(h3)と説明文(p)もホバー時に白へ上書き */
-.flow-card:hover h3,
-.flow-card:hover p {
-  color: #ffffff !important;
+/* カードの中の見出しや説明文も、白くならずに黒・濃いグレーに固定 */
+.flow-section .flow-card h3,
+.flow-section .flow-card p {
+  color: #000000 !important;
 }
 
-/* カード内の巨大な数字（01〜03）を、ホバー時に暗いグレーにして無骨に沈ませる */
-.flow-card:hover .flow-num {
-  color: #222222 !important;
+/* カードにカーソルを乗せた（hover）ときの設定 */
+/* 背景も文字も白黒反転させず、白いカードのままでいく場合は以下のようにします */
+.flow-section .flow-card:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.flow-section .flow-card:hover h3 {
+  color: #ff6b00 !important; /* 乗せたときだけタイトルがオレンジに光るストリート仕様！ */
+}
+
+.flow-section .flow-card:hover p {
+  color: #333333 !important;
+}
+
+/* 右上の巨大な数字（01〜03）も、消えないように薄いグレーのまま固定 */
+.flow-section .flow-card .flow-num,
+.flow-section .flow-card:hover .flow-num {
+  color: #e5e5e5 !important;
 }
