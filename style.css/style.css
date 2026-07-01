@@ -1506,3 +1506,23 @@ ul {
 .notes-list li {
   color: #333333 !important;
 }
+/* ==========================================
+   RESERVE PAGE HOVER REPAIR (FINAL OVERRIDE)
+   ========================================== */
+
+/* カーソルが乗った時、強力な!importantで背景を真っ黒、文字を真っ白に強制反転 */
+.flow-card:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* カード内のタイトル(h3)と説明文(p)もホバー時に白へ上書き */
+.flow-card:hover h3,
+.flow-card:hover p {
+  color: #ffffff !important;
+}
+
+/* カード内の巨大な数字（01〜03）を、ホバー時に暗いグレーにして無骨に沈ませる */
+.flow-card:hover .flow-num {
+  color: #222222 !important;
+}
