@@ -1542,3 +1542,21 @@ ul {
 .flow-section .flow-card:hover .flow-num {
   color: #e5e5e5 !important;
 }
+/* ==========================================
+   CONTACT FORM - BACKGROUND TRANSPARENCY 
+   ========================================== */
+
+/* 入力欄とセレクトボックスを、コンクリがうっすら透ける半透明にする */
+.contact-form .form-group input[type="text"],
+.contact-form .form-group input[type="tel"],
+.contact-form .form-group input[type="datetime-local"],
+.contact-form .form-group select {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  color: #000000 !important; /* 入力する文字はパキッと黒で読みやすく */
+}
+
+/* クリック（フォーカス）した時も、半透明をキープしつつ少し明るくする */
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
