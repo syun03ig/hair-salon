@@ -1560,3 +1560,26 @@ ul {
 .contact-form .form-group select:focus {
   background-color: rgba(255, 255, 255, 0.95) !important;
 }
+/* ==========================================
+   CONTACT PAGE CONCRETE UNIFICATION
+   ========================================== */
+
+/* フォームのセクション全体を透明にして、コンクリ背景を透けさせる */
+.contact-page {
+  background-color: transparent !important;
+}
+
+/* 入力欄の半透明をコンクリ背景に対して綺麗に馴染ませる */
+.contact-form .form-group input[type="text"],
+.contact-form .form-group input[type="tel"],
+.contact-form .form-group input[type="datetime-local"],
+.contact-form .form-group select {
+  background-color: rgba(255, 255, 255, 0.4) !important; /* 透け感を強めてコンクリを出します */
+  color: #000000 !important;
+}
+
+/* クリック（フォーカス）した時はパキッと白くして、入力しやすくする */
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus {
+  background-color: #ffffff !important;
+}
