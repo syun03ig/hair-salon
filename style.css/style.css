@@ -893,6 +893,9 @@ ul {
 
   .concept-dummy-image {
     height: 300px;
+    width: 100%;       
+    height: 300px;
+    object-fit: cover;
   }
 
   .menu-page {
