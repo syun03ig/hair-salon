@@ -468,8 +468,9 @@ ul {
   color: #aaaaaa;
   text-align: center;
 }
+
 /* ==========================================
-   GALLERY PAGE (💡ヨコ並びから、縦横タイルのグリッドレイアウトに強化！)
+   GALLERY PAGE
 ========================================== */
 .gallery-page {
   padding: 100px 0;
@@ -492,7 +493,6 @@ ul {
   text-transform: uppercase;
 }
 
-/* 💡 PCでは横3列に自動で折り返して無限に綺麗に並ぶ魔法の設定 */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -501,10 +501,10 @@ ul {
 
 .gallery-item-box {
   width: 100%;
-  aspect-ratio: 1 / 1;       /* 写真の比率を綺麗な正方形に固定 */
+  aspect-ratio: 1 / 1;       
   background-color: #f0f0f0;
-  border: 2px solid #000000;  /* ストリートな黒枠 */
-  box-shadow: 6px 6px 0px #000000; /* エッジの効いた塊の影 */
+  border: 2px solid #000000;  
+  box-shadow: 6px 6px 0px #000000; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -516,7 +516,6 @@ ul {
   overflow: hidden;
 }
 
-/* ホバーしたときに右下にスッと沈み込むストリート風アニメーション */
 .gallery-item-box:hover {
   transform: translate(4px, 4px);
   box-shadow: 2px 2px 0px #000000;
@@ -527,7 +526,7 @@ ul {
 .gallery-item-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* 画像を歪ませずに正方形にピタッと収める */
+  object-fit: cover;         
 }
 
 /* ==========================================
@@ -606,6 +605,7 @@ ul {
 .flow-card:hover p {
   color: #eeeeee;
 }
+
 /* ==========================================
    CONTACT (RESERVE FORM) PAGE
 ========================================== */
@@ -697,7 +697,7 @@ ul {
 }
 
 /* ==========================================
-   BACKGROUND BIG TEXT (左右の余白埋め)
+   BACKGROUND BIG TEXT
 ========================================== */
 .concept {
   position: relative; 
@@ -741,7 +741,7 @@ ul {
 }
 
 /* ==========================================
-   POPUP MODAL STYLE (ポップアップのデザインベース)
+   POPUP MODAL STYLE
 ========================================== */
 .menu-modal {
   position: fixed;
@@ -749,7 +749,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* 背景をかなり暗めのスケルトンに */
+  background-color: rgba(0, 0, 0, 0.85); 
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -759,33 +759,29 @@ ul {
   transition: opacity 0.4s ease;
 }
 
-/* クラス「is-show」がついたらフワッと表示 */
 .menu-modal.is-show {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* ポップアップの白い箱（ストリート感のあるパキッとした枠線デザイン） */
 .modal-content {
   background-color: #ffffff;
   color: #000000;
   width: 90%;
   max-width: 500px;
   padding: 50px 40px;
-  border: 4px solid #000000; /* 太い黒枠でトガらせる */
+  border: 4px solid #000000; 
   position: relative;
   transform: scale(0.8);
   transition: transform 0.4s ease;
-  max-height: 85vh;          /* 画面の高さの85%を最大にする */
-  overflow-y: auto;          /* 中身がはみ出たら箱の中でスクロールさせる */
+  max-height: 85vh;          
+  overflow-y: auto;          
 }
 
-/* 表示されたときに中身の箱も少しズームアップさせる演出 */
 .menu-modal.is-show .modal-content {
   transform: scale(1);
 }
 
-/* × ボタン（右上） */
 .modal-close {
   position: absolute;
   top: 15px;
@@ -798,10 +794,9 @@ ul {
 }
 
 .modal-close:hover {
-  color: #ffdf00; /* ホバーでテーマカラーの黄色に */
+  color: #ffdf00; 
 }
 
-/* ポップアップの中のタイトル */
 .modal-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 28px;
@@ -812,300 +807,37 @@ ul {
   margin-bottom: 20px;
 }
 
-/* ポップアップの中の説明文 */
 .modal-description {
   font-size: 15px;
   line-height: 1.8;
   color: #333333;
 }
 
-/* ==========================================
-   POPUP MODAL IMAGE STYLE
-========================================== */
 .modal-image-box {
   width: 100%;
-  height: 420px;            /* ポップアップ内画像の高さ */
+  height: 420px;            
   margin-bottom: 20px;
-  border: 2px solid #000000; /* 画像にも太めの黒枠をつけてエッジを効かせる */
+  border: 2px solid #000000; 
   overflow: hidden;
-  background-color: #f0f0f0; /* 画像が読み込まれるまでのダミー背景 */
+  background-color: #f0f0f0; 
 }
 
 .modal-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* 画像の縦横比を崩さずに綺麗に中央に収める */
-  object-position: center 24%;/* 画像を「中央やや下寄り」に配置 */
+  object-fit: cover;         
+  object-position: center 24%;
 }
-
-/* ==========================================
-   MEDIA QUERIES (💡すべてのスマホ用上書きルールはここに集約！)
-========================================== */
-@media (max-width: 768px) {
-  .header {
-    padding: 0 15px; 
-  }
-  
-  .header-nav ul {
-    gap: 20px;
-  }
-
-  .mv-title {
-    font-size: 48px;
-  }
-
-  .mv-subtitle {
-    font-size: 12px;
-    letter-spacing: 0.2em;
-  }
-
-  .mv-image {
-    object-position: center center;
-  }
-
-  .mv-text-content {
-    left: 20px;
-  }
-
-  .concept {
-    padding: 40px 0;
-  }
-
-  .concept-container {
-    gap: 20px;
-    padding: 0 15px;
-  }
-
-  .concept-title {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
-
-  .concept-lead {
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  .concept-description {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .concept-dummy-image {
-    height: 300px;
-    width: 100%;       
-    height: 300px;
-    object-fit: cover;
-  }
-
-  .menu-page {
-    padding: 60px 0;
-    background-color: #111111; 
-  }
-
-  .menu-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .menu-lists {
-    flex-direction: column;  
-    gap: 40px;
-    padding: 0 20px;
-  }
-
-  .menu-group {
-    gap: 25px;
-  }
-
-  .menu-item {
-    font-size: 14px; 
-  }
-
-  .menu-name {
-    font-size: 14px;
-  }
-
-  .menu-price {
-    font-size: 14px;
-  }
-
-  .menu-access {
-    padding: 60px 0;
-  }
-
-  .menu-access-container {
-    flex-direction: column; 
-    gap: 40px;
-    padding: 0 20px;
-  }
-
-  .menu-access-heading {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .shop-address, .shop-details {
-    text-align: center; 
-  }
-  
-  .shop-details p span {
-    display: block; 
-    width: 100%;
-    margin-bottom: 4px;
-  }
-
-  .menu-access-map-box {
-    width: 100%;
-    height: 300px; 
-  }
-
-  .staff-hero {
-    height: 250px;          
-  }
-
-  .staff-list-section {
-    padding: 40px 0 60px;
-  }
-
-  .staff-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .staff-container {
-    flex-direction: column; 
-    align-items: center;
-    gap: 50px;
-    padding: 0 20px;
-  }
-
-  .staff-card {
-    max-width: 100%;
-  }
-
-  .staff-avatar-box {
-    height: 300px;          
-  }
-
-  .footer {
-    padding: 40px 0 20px;
-  }
-
-  .footer-container {
-    flex-direction: column; 
-    gap: 30px;
-    text-align: center;
-  }
-
-  .footer-nav ul {
-    flex-direction: column; 
-    gap: 15px;
-  }
-  
-  .gallery-page {
-    padding: 60px 0;
-  }
-
-  .gallery-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  /* 💡 スマホでは横2列のコンパクトなタイル並びに上書きルールを設定！ */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 0 20px;
-  }
-  
-  .flow-section {
-    padding: 60px 0;
-  }
-
-  .flow-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .flow-steps {
-    flex-direction: column;
-    gap: 30px;
-    padding: 0 20px;
-  }
-
-  .flow-card {
-    padding: 30px 20px;
-  }
-
-  .flow-num {
-    font-size: 36px;
-    top: -5px;
-    right: 15px;
-  }
-  
-  .contact-page {
-    padding: 60px 0;
-  }
-
-  .contact-heading {
-    font-size: 32px;
-    margin-bottom: 40px;
-  }
-
-  .contact-form {
-    gap: 25px;
-  }
-
-  .form-group input[type="text"],
-  .form-group input[type="tel"],
-  .form-group input[type="datetime-local"],
-  .form-group select {
-    height: 50px;
-    font-size: 14px;
-  }
-
-  .form-submit-btn {
-    height: 55px;
-    font-size: 14px;
-  }
-
-  .concept::before, .concept::after {
-    display: none;
-  }
-
-  /* ポップアップのスマホ用調整 */
-  .modal-content {
-    width: 92%;               
-    padding: 35px 25px 30px;  
-  }
-  .modal-image-box {
-    height: 380px;            
-    margin-bottom: 20px;
-  }
-  .modal-title {
-    font-size: 26px;          
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-  }
-  .modal-description {
-    font-size: 16px;          
-    line-height: 1.6;
-  }
-} /* 💡 542行目：スマホ用上書きルール終了 */
-
 
 /* ==========================================
    NEWS & FEATURES SECTION 
-   ========================================== */
+========================================== */
 .news-section, .features-section {
   max-width: 1200px;
   margin: 100px auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
-/* タイトル周り */
 .section-title-box {
   margin-bottom: 40px;
 }
@@ -1124,7 +856,6 @@ ul {
   letter-spacing: 0.05em;
 }
 
-/* NEWSのリスト */
 .news-container {
   border-top: 2px solid #000;
 }
@@ -1156,7 +887,6 @@ ul {
   line-height: 1.5;
 }
 
-/* でかでかリンク（左右交互レイアウト） */
 .feature-row {
   display: flex;
   align-items: center;
@@ -1181,7 +911,6 @@ ul {
   box-shadow: 4px 4px 0px #000;
 }
 
-/* テキストコンテンツ */
 .feature-num {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -1218,21 +947,478 @@ ul {
 }
 
 /* ==========================================
-   ふわっと出すための初期設定
-   ========================================== */
+   RESERVE PAGE ADDITIONAL STYLES
+========================================== */
+.reserve-actions {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #1a1a1a; 
+  border: 1px solid #333;
+}
+.reserve-action-lead {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+.reserve-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .reserve-buttons {
+    flex-direction: row;
+    max-width: 600px;
+  }
+}
+.btn-main-reserve,
+.btn-line-reserve {
+  flex: 1;
+  display: inline-block;
+  padding: 18px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.btn-main-reserve {
+  background-color: transparent;
+  color: #ff6b00; 
+  border: 1px solid #ff6b00;
+}
+.btn-main-reserve:hover {
+  background-color: #ff6b00;
+  color: #fff;
+}
+.btn-line-reserve {
+  background-color: transparent;
+  color: #06c755; 
+  border: 1px solid #06c755;
+}
+.btn-line-reserve:hover {
+  background-color: #06c755;
+  color: #fff;
+}
+.reserve-buttons .arrow {
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.btn-main-reserve:hover .arrow,
+.btn-line-reserve:hover .arrow {
+  transform: translateX(5px);
+}
+
+.reserve-info-section {
+  padding: 100px 0;
+  background-color: #0d0d0d;
+  border-top: 1px solid #222;
+}
+.reserve-info-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+@media (min-width: 768px) {
+  .reserve-info-container {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .reserve-faq, .reserve-notes {
+    flex: 1;
+  }
+}
+.info-subheading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+.info-subheading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 3px;
+  background-color: #ff6b00;
+}
+.reserve-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.faq-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.faq-item p {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.6;
+}
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.notes-list li {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+}
+.notes-list li::before {
+  content: '■';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 10px;
+  color: #ff6b00;
+}
+
+/* ==========================================
+   UNIFICATION & HOVER REPAIR & FORMS
+========================================== */
+.staff-page,
+.gallery-page,
+.flow-section {
+  background-color: transparent !important;
+  color: #000000 !important; 
+}
+.reserve-info-section {
+  background-color: transparent !important;
+  border-top: 2px solid #000000 !important; 
+}
+.staff-heading,
+.gallery-heading,
+.flow-heading {
+  color: #000000 !important;
+}
+.staff-list-section {
+  background-color: transparent !important;
+}
+.staff-card {
+  background-color: #ffffff !important; 
+  border: 2px solid #000000 !important; 
+  box-shadow: 6px 6px 0px #000000 !important; 
+}
+.staff-name {
+  color: #000000 !important;
+}
+.staff-post {
+  color: #ff6b00 !important; 
+}
+.staff-text {
+  color: #222222 !important; 
+}
+.gallery-item-box {
+  background-color: #ffffff !important;
+}
+.flow-card {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 6px 6px 0px #000000 !important;
+  color: #000000 !important;
+}
+.info-subheading {
+  color: #000000 !important;
+}
+.faq-item h4 {
+  color: #000000 !important;
+}
+.faq-item p,
+.notes-list li {
+  color: #333333 !important;
+}
+.flow-section .flow-card {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.flow-section .flow-card h3,
+.flow-section .flow-card p {
+  color: #000000 !important;
+}
+.flow-section .flow-card:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.flow-section .flow-card:hover h3 {
+  color: #ff6b00 !important; 
+}
+.flow-section .flow-card:hover p {
+  color: #333333 !important;
+}
+.flow-section .flow-card .flow-num,
+.flow-section .flow-card:hover .flow-num {
+  color: #e5e5e5 !important;
+}
+.contact-page {
+  background-color: transparent !important;
+}
+.contact-form .form-group input[type="text"],
+.contact-form .form-group input[type="tel"],
+.contact-form .form-group input[type="datetime-local"],
+.contact-form .form-group select {
+  background-color: rgba(255, 255, 255, 0.4) !important; 
+  color: #000000 !important; 
+}
+.contact-form .form-group input:focus,
+.contact-form .form-group select:focus {
+  background-color: #ffffff !important;
+}
+
+/* ==========================================
+   ANIMATION CLASS
+========================================== */
 .fade-el {
-  opacity: 0;                     
+  opacity: 0;                      
   transform: translateY(50px);    
   transition: opacity 1.0s ease, transform 1.0s ease; 
 }
-
 .fade-el.is-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 追加要素のスマホ対応 */
+
+/* ==========================================
+   MEDIA QUERIES (💡すべてのスマホ用上書きはここに完全集約！)
+========================================== */
 @media (max-width: 768px) {
+  .header {
+    padding: 0 15px; 
+  }
+  .header-nav ul {
+    gap: 20px;
+  }
+  .mv-title {
+    font-size: 48px;
+  }
+  .mv-subtitle {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+  .mv-image {
+    object-position: center center;
+  }
+  .mv-text-content {
+    left: 20px;
+  }
+  .concept {
+    padding: 40px 0;
+  }
+  .concept-container {
+    gap: 20px;
+    padding: 0 15px;
+  }
+  .concept-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .concept-lead {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  .concept-description {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* コンセプト画像のバグ修正 */
+  .concept-dummy-image {
+    width: 100% !important;       
+    height: 300px !important;
+    object-fit: cover !important;
+  }
+
+  .menu-page {
+    padding: 60px 0;
+    background-color: #111111; 
+  }
+  .menu-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .menu-lists {
+    flex-direction: column;  
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .menu-group {
+    gap: 25px;
+  }
+  .menu-item {
+    font-size: 14px; 
+  }
+  .menu-name {
+    font-size: 14px;
+  }
+  .menu-price {
+    font-size: 14px;
+  }
+  .menu-access {
+    padding: 60px 0;
+  }
+  .menu-access-container {
+    flex-direction: column; 
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .menu-access-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+  .shop-address, .shop-details {
+    text-align: center; 
+  }
+  .shop-details p span {
+    display: block; 
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .menu-access-map-box {
+    width: 100%;
+    height: 300px; 
+  }
+  .staff-hero {
+    height: 250px;          
+  }
+  .staff-list-section {
+    padding: 40px 0 60px;
+  }
+  .staff-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .staff-container {
+    flex-direction: column; 
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px;
+  }
+  .staff-card {
+    max-width: 100%;
+  }
+  .staff-avatar-box {
+    height: 300px;          
+  }
+  .footer {
+    padding: 40px 0 20px;
+  }
+  .footer-container {
+    flex-direction: column; 
+    gap: 30px;
+    text-align: center;
+  }
+  .footer-nav ul {
+    flex-direction: column; 
+    gap: 15px;
+  }
+  .gallery-page {
+    padding: 60px 0;
+  }
+  .gallery-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 20px;
+  }
+  .flow-section {
+    padding: 60px 0;
+  }
+  .flow-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .flow-steps {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .flow-card {
+    padding: 30px 20px;
+  }
+  .flow-num {
+    font-size: 36px;
+    top: -5px;
+    right: 15px;
+  }
+  .contact-page {
+    padding: 60px 0;
+  }
+  .contact-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .contact-form {
+    gap: 25px;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="tel"],
+  .form-group input[type="datetime-local"],
+  .form-group select {
+    height: 50px;
+    font-size: 14px;
+  }
+  .form-submit-btn {
+    height: 55px;
+    font-size: 14px;
+  }
+  .concept::before, .concept::after {
+    display: none;
+  }
+
+  /* ポップアップのスマホ用調整 */
+  .modal-content {
+    width: 92%;               
+    padding: 35px 25px 30px;  
+  }
+  .modal-image-box {
+    height: 380px;            
+    margin-bottom: 20px;
+  }
+  .modal-title {
+    font-size: 26px;          
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+  .modal-description {
+    font-size: 16px;          
+    line-height: 1.6;
+  }
+
+  /* 💡 追加パーツのスマホ対応（締めカッコの中に完全移動しました） */
+  .news-section, .features-section {
+    padding: 0 20px;
+    margin: 60px auto;
+  }
   .news-item {
     flex-direction: column;
     align-items: flex-start;
@@ -1249,340 +1435,9 @@ ul {
   .feature-title {
     font-size: 28px;
   }
-}
-/* ==========================================
-   RESERVE PAGE ADDITIONAL STYLES
-   ========================================== */
-
-/* --- 案①: 予約ボタンエリア --- */
-.reserve-actions {
-  margin-top: 60px;
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #1a1a1a; /* 少し濃いめのダークグレーでボックス化 */
-  border: 1px solid #333;
-}
-
-.reserve-action-lead {
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
-.reserve-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* 画面が広いときはボタンを横並びにする */
-@media (min-width: 768px) {
-  .reserve-buttons {
-    flex-direction: row;
-    max-width: 600px;
-  }
-}
-
-.btn-main-reserve,
-.btn-line-reserve {
-  flex: 1;
-  display: inline-block;
-  padding: 18px 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-}
-
-/* WEB予約ボタン（オレンジのアクセント） */
-.btn-main-reserve {
-  background-color: transparent;
-  color: #ff6b00; /* 鏡のバックライトに合わせたオレンジ */
-  border: 1px solid #ff6b00;
-}
-
-.btn-main-reserve:hover {
-  background-color: #ff6b00;
-  color: #fff;
-}
-
-/* 公式LINEボタン（グリーンのアクセント） */
-.btn-line-reserve {
-  background-color: transparent;
-  color: #06c755; /* LINEカラー */
-  border: 1px solid #06c755;
-}
-
-.btn-line-reserve:hover {
-  background-color: #06c755;
-  color: #fff;
-}
-
-.reserve-buttons .arrow {
-  margin-left: 8px;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.btn-main-reserve:hover .arrow,
-.btn-line-reserve:hover .arrow {
-  transform: translateX(5px);
-}
-
-
-/* --- 案②＆③: Q&A・注意事項セクション --- */
-.reserve-info-section {
-  padding: 100px 0;
-  background-color: #0d0d0d;
-  border-top: 1px solid #222;
-}
-
-.reserve-info-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-@media (min-width: 768px) {
   .reserve-info-container {
-    flex-direction: row;
+    flex-direction: column;
     gap: 50px;
+    padding: 0 20px;
   }
-  .reserve-faq, .reserve-notes {
-    flex: 1;
-  }
-}
-
-.info-subheading {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900;
-  font-size: 24px;
-  letter-spacing: 0.1em;
-  color: #fff;
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
-}
-
-/* 見出しの下にさりげないストリート感のあるアンダーライン */
-.info-subheading::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 40px;
-  height: 3px;
-  background-color: #ff6b00;
-}
-
-/* FAQのデザイン */
-.reserve-faq {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.faq-item h4 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.faq-item p {
-  font-size: 14px;
-  color: #999;
-  line-height: 1.6;
-}
-
-/* 注意事項のデザイン */
-.notes-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.notes-list li {
-  font-size: 13px;
-  color: #999;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 20px;
-}
-
-/* 文頭に「※」の代わりに無骨なドットを配置 */
-.notes-list li::before {
-  content: '■';
-  position: absolute;
-  left: 0;
-  top: 2px;
-  font-size: 10px;
-  color: #ff6b00;
-}
-/* ==========================================
-   STAFF / GALLERY / RESERVE PAGE CONCRETE UNIFICATION
-   ========================================== */
-
-/* 3つのページの背景を完全に透明にし、bodyのコンクリート画像をそのまま透けさせる */
-.staff-page,
-.gallery-page,
-.flow-section {
-  background-color: transparent !important;
-  color: #000000 !important; /* 文字はコンクリに映えるパキッとした黒 */
-}
-
-/* 予約ページのQ&A・注意事項セクションも透明にしてコンクリと一体化 */
-.reserve-info-section {
-  background-color: transparent !important;
-  border-top: 2px solid #000000 !important; /* 区切り線も無骨な黒に変更 */
-}
-
-/* 各ページのメイン大見出し（STAFF, GALLERY, HOW TO RESERVE）の色を黒に統一 */
-.staff-heading,
-.gallery-heading,
-.flow-heading {
-  color: #000000 !important;
-}
-
-/* --- スタッフページ（staff.html）の微調整 --- */
-.staff-list-section {
-  background-color: transparent !important;
-}
-
-.staff-card {
-  background-color: #ffffff !important; /* カードはあえて白にして、コンクリ背景からパキッと浮かせる */
-  border: 2px solid #000000 !important; /* ストリート感のある太めの黒枠 */
-  box-shadow: 6px 6px 0px #000000 !important; /* ギャラリーとお揃いの、ボカさない硬い影 */
-}
-
-.staff-name {
-  color: #000000 !important;
-}
-
-.staff-post {
-  color: #ff6b00 !important; /* 役職名はアクセントのオレンジにしてストリート感を強調！ */
-}
-
-.staff-text {
-  color: #222222 !important; /* 説明文は濃いめのグレーで読みやすく */
-}
-
-/* --- ギャラリーページ（gallery.html）の微調整 --- */
-/* すでに黒枠と影が付いているので、背景を白にしてコンクリの上にパキッと並べます */
-.gallery-item-box {
-  background-color: #ffffff !important;
-}
-
-/* --- 予約ページ（reserve.html）の微調整 --- */
-/* 予約の3ステップカードも、スタッフカードとお揃いの黒枠・硬い影デザインに統一 */
-.flow-card {
-  background-color: #ffffff !important;
-  border: 2px solid #000000 !important;
-  box-shadow: 6px 6px 0px #000000 !important;
-  color: #000000 !important;
-}
-
-/* Q&Aの文字色をコンクリ背景で見えやすいように黒・濃いグレーに変更 */
-.info-subheading {
-  color: #000000 !important;
-}
-
-.faq-item h4 {
-  color: #000000 !important;
-}
-
-.faq-item p,
-.notes-list li {
-  color: #333333 !important;
-}
-/* ==========================================
-   RESERVE PAGE HOVER REPAIR (FINAL)
-   ========================================== */
-
-/* 予約ページのカードの背景を常に「白」、文字を常に「黒」に固定する */
-.flow-section .flow-card {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
-/* カードの中の見出しや説明文も、白くならずに黒・濃いグレーに固定 */
-.flow-section .flow-card h3,
-.flow-section .flow-card p {
-  color: #000000 !important;
-}
-
-/* カードにカーソルを乗せた（hover）ときの設定 */
-/* 背景も文字も白黒反転させず、白いカードのままでいく場合は以下のようにします */
-.flow-section .flow-card:hover {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-}
-
-.flow-section .flow-card:hover h3 {
-  color: #ff6b00 !important; /* 乗せたときだけタイトルがオレンジに光るストリート仕様！ */
-}
-
-.flow-section .flow-card:hover p {
-  color: #333333 !important;
-}
-
-/* 右上の巨大な数字（01〜03）も、消えないように薄いグレーのまま固定 */
-.flow-section .flow-card .flow-num,
-.flow-section .flow-card:hover .flow-num {
-  color: #e5e5e5 !important;
-}
-/* ==========================================
-   CONTACT FORM - BACKGROUND TRANSPARENCY 
-   ========================================== */
-
-/* 入力欄とセレクトボックスを、コンクリがうっすら透ける半透明にする */
-.contact-form .form-group input[type="text"],
-.contact-form .form-group input[type="tel"],
-.contact-form .form-group input[type="datetime-local"],
-.contact-form .form-group select {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  color: #000000 !important; /* 入力する文字はパキッと黒で読みやすく */
-}
-
-/* クリック（フォーカス）した時も、半透明をキープしつつ少し明るくする */
-.contact-form .form-group input:focus,
-.contact-form .form-group select:focus {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-}
-/* ==========================================
-   CONTACT PAGE CONCRETE UNIFICATION
-   ========================================== */
-
-/* フォームのセクション全体を透明にして、コンクリ背景を透けさせる */
-.contact-page {
-  background-color: transparent !important;
-}
-
-/* 入力欄の半透明をコンクリ背景に対して綺麗に馴染ませる */
-.contact-form .form-group input[type="text"],
-.contact-form .form-group input[type="tel"],
-.contact-form .form-group input[type="datetime-local"],
-.contact-form .form-group select {
-  background-color: rgba(255, 255, 255, 0.4) !important; /* 透け感を強めてコンクリを出します */
-  color: #000000 !important;
-}
-
-/* クリック（フォーカス）した時はパキッと白くして、入力しやすくする */
-.contact-form .form-group input:focus,
-.contact-form .form-group select:focus {
-  background-color: #ffffff !important;
 }
