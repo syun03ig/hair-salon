@@ -1447,29 +1447,32 @@ ul {
   }
 }
 /* ==========================================
-   SMARTPHONE HEADER MENU REPAIR (実機バグ修正)
+   SMARTPHONE HEADER MENU REPAIR (メニュー完全一段揃え版)
    ========================================== */
 @media (max-width: 768px) {
   /* メニュー全体の高さを自動にし、上下の余白を少しゆったりさせる */
   .header {
     height: auto !important;
     padding: 15px !important;
-    flex-direction: column !important; /* ロゴとメニューを縦並びにして中央寄せに */
+    flex-direction: column !important; /* ロゴ、メニュー、ボタンを縦に並べる */
     gap: 15px !important;
   }
 
-  /* メニュー項目（CONCEPT、MENUなど）を画面からはみ出さないように自動で折り返させる */
+  /* メニュー項目（CONCEPT〜RESERVE）を絶対に折れ曲がらせず、1行（一段）に強制固定 */
   .header-nav ul {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 12px 20px !important; /* 横の隙間は20px、溢れて2段目になった時は縦の隙間を12pxにする */
-    padding: 0 10px !important;
+    display: flex !important;
+    flex-wrap: nowrap !important; /* 折り返しを絶対に禁止する命令 */
+    gap: 0 10px !important;       /* 文字同士の横の隙間を10pxに縮めて一段に収める */
+    justify-content: space-between !important; /* 1行の中で均等にバランスよく広げる */
+    width: 100% !important;
+    padding: 0 !important;
   }
 
-  /* メニューの文字をスマホ用に少しコンパクトにする */
+  /* 文字のサイズと間隔をジャストフィットさせて、一段に美しく収める */
   .header-nav a {
-    font-size: 12px !important;
-    letter-spacing: 0.05em !important;
+    font-size: 11px !important;
+    letter-spacing: 0.02em !important;
+    white-space: nowrap !important; /* 文字自体が途中で改行されるのを防ぐ */
   }
 
   /* 予約ボタン（RESERVE）も中央に綺麗に配置する */
@@ -1478,7 +1481,7 @@ ul {
     text-align: center !important;
   }
   .btn-reserve {
-    width: 80% !important; /* スマホで押しやすいように少し横長に */
+    width: 80% !important; /* スマホで押しやすいように横長に */
     padding: 10px 0 !important;
   }
 }
